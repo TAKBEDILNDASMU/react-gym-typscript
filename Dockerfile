@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Expose port to have it mapped by daemon
+EXPOSE 4173
+
 # Copy the rest of the application files
 COPY . .
 
