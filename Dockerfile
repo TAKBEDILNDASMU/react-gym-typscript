@@ -5,7 +5,7 @@ FROM node:20-alpine
 WORKDIR /react-docker-gym/
 
 # Copy package.json and package-lock.json files
-COPY package*.json .
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
@@ -14,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Expose port to have it mapped by daemon
-EXPOSE 5173
+EXPOSE 8000
 
 # Build the application
 RUN npm run build
 
 # Set the command to start the application
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "preview"]
